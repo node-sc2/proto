@@ -1,0 +1,25 @@
+{
+  "name": "@node-sc2/proto",
+  "version": "0.5.0",
+  "description": "Node.js transport client implementation of sc2client-proto definition - used for interfacing scripted and/or ML agents with Starcraft 2",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/node-sc2/proto.git"
+  },
+  "keywords": [
+    "s2client-proto",
+    "sc2",
+    "sc2-proto",
+    "node-sc2-proto"
+  ],
+  "author": "Jared Kantrowitz <me@jkantr.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/node-sc2/proto/issues"
+  },
+  "homepage": "https://github.com/node-sc2/proto#readme"
+}
