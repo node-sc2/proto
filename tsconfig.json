@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "outDir": "./built",
+        "target": "es2018",
+        "allowJs": true,
+        "checkJs": true,
+        "module": "commonjs"
+    }
+}

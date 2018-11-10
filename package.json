@@ -2,7 +2,8 @@
   "name": "@node-sc2/proto",
   "version": "0.5.0",
   "description": "Node.js transport client implementation of sc2client-proto definition - used for interfacing scripted and/or ML agents with Starcraft 2",
-  "main": "main.js",
+  "main": "client.js",
+  "typings": "client.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/node-sc2/proto/issues"
   },
-  "homepage": "https://github.com/node-sc2/proto#readme"
+  "homepage": "https://github.com/node-sc2/proto#readme",
+  "dependencies": {
+    "create-event-emitter": "^1.0.0",
+    "debug": "^4.1.0",
+    "event-to-promise": "^0.8.0",
+    "promise-task-queue": "^1.2.0",
+    "protobufjs": "^6.8.8",
+    "ws": "^6.1.0"
+  }
 }
