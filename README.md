@@ -60,11 +60,21 @@ connect(options);
 ```
 
 ## Protobuf Integration
-The protocol buffer definitions *in typescript* current to this version of `@node-sc2/proto` are included in the `typings/` directory of this repo. If you'd like to see their protobuf counterpart (along with the api developer's comments), you can do so by visiting the [`sc2client-proto`](https://github.com/Blizzard/s2client-proto/tree/master/s2clientprotocol) repo.
+The protocol buffer definitions *in typescript* current to this version of `@node-sc2/proto` are exposed when installing this package, and can be referenced from the `SC2APIProtocol` namespace. If you'd like to see their protobuf counterpart (along with the api developer's comments), you can do so by visiting the [`sc2client-proto`](https://github.com/Blizzard/s2client-proto/tree/master/s2clientprotocol) repo.
 
-One advantage to the typescript definitions is code completion - which can be useful when dealing with a foreign data-rich API. Here is an example in vscode:
+One advantage to the typescript definitions is code completion - which can be useful when dealing with a foreign data-rich API. See the example below in vscode:
 
 ![vscode editor completion example](https://i.imgur.com/5Ytm1DB.gif)
+
+Along with the inferred types for the return values of api calls, you can also directly hint types from the `SC2APIProtocol` namepsace, for instance, using JSDoc annotations:
+
+```js
+/** @type {SC2APIProtocol.ActionRawUnitCommand} */
+const command = {
+    // ....
+};
+```
+This will give you hinting and completion + optional type checking (via `checkJs`) for arbitrary identifiers.
 
 One thing to note, when `pbjs` compiles `.proto` to `.js`, `snake_case` properties get "js-fitted" into `camelCase` - simply for convention. Normally, `pbjs` would also default to using the `Long` type (`long.js`) for 64bit ints, but because all of the 64bit numbers in this schema are for identification (and therefore no transforms or math need to be done to them), I've simply opted to have them be strings. That means just that any time you see a 64bit int in the protocol defs, expect a string (and send a string) in its place. This is almost exclusively used for unit tag identifiers.
 

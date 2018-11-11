@@ -11,6 +11,9 @@ const sc2 = protobuf.Root.fromJSON(require('./proto-bundle.js'));
 const Request = sc2.lookupType('Request');
 const Response = sc2.lookupType('Response');
 
+/** @typedef {import('./client').ProtoClient} ProtoClient */
+/** @typedef {import('./client').ApiFunctions} ApiFunctions */
+
 /**
  * this extracts the possible Request/Response types from the `oneof` def:
  *
@@ -60,7 +63,7 @@ function createApiQueue() {
 
 /**
  * creates a unique payload creation and push-to-queue function per request type
- * @returns {NodeSC2Proto.ApiFunctions}
+ * @returns {ApiFunctions}
  */
 function createApiFunctions() {
 	function responseReducer(acc, entry) {
@@ -105,14 +108,12 @@ function createPromiseQueue() {
 	return queue;
 }
 
-/** @returns {WebSocket} */
+/**
+ * @returns {import('ws')} */
 function createConnection({ host = '127.0.0.1', port = 5000 }) {
 	return new WebSocket(`ws://${host}:${port}/sc2api`);
 }
 
-/**
- * @returns {NodeSC2Proto.ProtoClient}
- */
 function createProtoClient() {
 	const _ws = null;
 	const status = 99;
@@ -120,7 +121,7 @@ function createProtoClient() {
 	apiQueue.setMaxListeners(24);
 
 	// @TODO should we be exposing the websocket itself like this?
-	/** @type {NodeSC2Proto.ProtoClient} */
+	/** @type {ProtoClient} */
 	const client = {
 		...createApiFunctions(),
 		_ws,
@@ -130,6 +131,7 @@ function createProtoClient() {
 			this._ws.on('message', (res) => {
 				let err;
 
+				//@ts-ignore i promise you it's not a string
 				const responseMessage = Response.decode(res);
 
 				/** @type {SC2APIProtocol.Response} */

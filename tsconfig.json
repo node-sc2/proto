@@ -4,6 +4,8 @@
         "target": "es2018",
         "allowJs": true,
         "checkJs": true,
-        "module": "commonjs"
+		"module": "commonjs",
+		"esModuleInterop": true,
+        "allowSyntheticDefaultImports": true
     }
 }
