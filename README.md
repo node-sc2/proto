@@ -105,7 +105,7 @@ Initializes the client with the given options. A ping is made to verify the conn
 ```
 Example usage is shown above in the "Usage" section.
 
-### *.createGame(game: RequestCreateGame) => Promise\<ResponseCreateGame\>*
+### *`.createGame(game: RequestCreateGame) => Promise<ResponseCreateGame>`*
 Creates a new game with the given participants.
 
 Example:
@@ -140,7 +140,7 @@ client.createGame({
 });
 ```
 
-### *.joinGame(joinGame: RequestJoinGame) => Promise\<ResponseJoinGame\>*
+### *`.joinGame(joinGame: RequestJoinGame) => Promise<ResponseJoinGame>`*
 Joins the game as a participant. This is possible whether or not this instance is the one that created the game. A success response will include your agent's `playerId`.
 
 Example:
@@ -153,7 +153,7 @@ client.joinGame({
 });
 ```
 
-### *.gameInfo() => Promise\<ResponseGameInfo\>*
+### *`.gameInfo() => Promise<ResponseGameInfo>`*
 Requests game information including player details and applicable `uInt8Array` `ImageData`'s such as the `pathingGrid`, `terrainHeight`, and `startLocations`.
 
 Example:
@@ -172,7 +172,7 @@ client.gameInfo()
     });
 ```
 
-### *.observation() => Promise\<ResponseObservation\>*
+### *`.observation() => Promise<ResponseObservation>`*
 Observation data includes everything from the chat, to the `gameLoop` #, minerals/gas, supply, `mapState` (creep, visibility), and units. Basically everything.
 
 Example:
@@ -190,7 +190,7 @@ client.observation()
     });
 ```
 
-### *.step(step: RequestStep) => Promise\<ResponseStep\>*
+### *`.step(step: RequestStep) => Promise<ResponseStep>`*
 Advances the game when in step mode.
 
 Example:
@@ -198,7 +198,7 @@ Example:
 client.step({ count: 4 }); // leaving blank is the same as { count: 1 }
 ```
 
-### *.action(action: RequestAction) => Promise\<ResponseAction\>*
+### *`.action(action: RequestAction) => Promise<ResponseAction>`*
 Give an action command to a unit or units.
 
 Example:
@@ -220,7 +220,7 @@ client.action({
 });
 ```
 
-### *.data(data: RequestData) => Promise\<ResponseData\>*
+### *`.data(data: RequestData) => Promise<ResponseData>`*
 "Data" includes applicable data to the current game type, such as `abilities`, `units` (that's unit type data, not the units themselves), `upgrades`, `buffs`, and `effects`.
 
 Example:
@@ -243,7 +243,7 @@ client.data({
 });
 ```
 
-### *.query(query: RequestQuery) => Promise\<ResponseQuery\>*
+### *`.query(query: RequestQuery) => Promise<ResponseQuery>`*
 Make a query against the current game state, such as `pathing` (can this unit get there?) or `placements` (can i put this thing there?).
 
 Example:
@@ -282,7 +282,7 @@ client.data({
 });
 ```
 
-### *.debug(debugRequest: RequestDebug) => Promise\<ResponseDebug\>*
+### *`.debug(debugRequest: RequestDebug) => Promise<ResponseDebug>`*
 Various game interactions, including creating/killing units, adjusting the game or map state, and drawing shapes or text to the game world, or text to the game screen.
 
 Example:
@@ -304,7 +304,7 @@ client.debug({
 });
 ```
 
-### *.ping() => Promise\<ResponsePing\>*
+### *`.ping() => Promise<ResponsePing>`*
 Pings the SC2 client the proto client is currently connected to to verify connection. An example is shown above in the "Usage" section.
 
 ## Additional Notes
