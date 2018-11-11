@@ -308,7 +308,7 @@ client.debug({
 Pings the SC2 client the proto client is currently connected to to verify connection. An example is shown above in the "Usage" section.
 
 ## Additional Notes
-Many additional requests types exist such as `.quickSave()`, `.quickLoad()`, `.startReplay()`, and `.saveMap()`. I've not tested these, but they should work. Again, I encourage you to reference the `sc2client-proto` documentation [here](https://github.com/Blizzard/s2client-proto/blob/master/docs/protocol.md) and definitions [here](https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/sc2api.proto) for more detailed usage.
+Many additional request types exist such as `.quickSave()`, `.quickLoad()`, `.startReplay()`, and `.saveMap()`. I've not tested these, but they should work. Again, I encourage you to reference the `sc2client-proto` documentation [here](https://github.com/Blizzard/s2client-proto/blob/master/docs/protocol.md) and definitions [here](https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/sc2api.proto) for more detailed usage.
 
 All references to substantial portions of the `sc2api-proto` protocol buffer definitions are Copyright (c) 2017 Blizzard Entertainment as released under the MIT license. See the header comment of `./proto-bundle.js` in this repository for more information.
 
