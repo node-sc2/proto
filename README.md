@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/version-0.5.2-brightgreen.svg)
+![](https://img.shields.io/badge/version-0.5.3-brightgreen.svg)
 
 # @node-sc2/proto
 This package allows you to easily create a client to interface with the Starcraft II API at the ground level, via its protobuf-defined interface - with Promises used to represent individual `Request -> Response` cycles.
