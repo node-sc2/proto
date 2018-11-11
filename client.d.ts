@@ -1,4 +1,4 @@
-import WebSocket from 'ws';
+import * as WebSocket from 'ws';
 import { EventEmitter } from 'events';
 import { Message } from 'protobufjs';
 
