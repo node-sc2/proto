@@ -1,11 +1,11 @@
 {
-    "compilerOptions": {
-        "outDir": "./built",
-        "target": "es2018",
-        "allowJs": true,
-        "checkJs": true,
+	"compilerOptions": {
+		"outDir": "./built",
+		"target": "es2018",
+		"allowJs": true,
+		"checkJs": true,
 		"module": "commonjs",
 		"esModuleInterop": true,
-        "allowSyntheticDefaultImports": true
-    }
+		"allowSyntheticDefaultImports": true
+	}
 }
