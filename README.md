@@ -18,7 +18,7 @@ This library is written in javascript, although typings are included and jsdoc a
 `npm install --save @node-sc2/proto`
 
 ## Usage
-Except the exported constructor, all documented functions return a promise:
+Except the exported factory, all documented functions return a promise:
 ```js
 const createProtoClient = require('@node-sc2/proto')
 

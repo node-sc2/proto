@@ -111,7 +111,7 @@ declare namespace SC2APIProtocol {
     }
 
     export interface Event {
-        deadUnits?: Array<number>;
+        deadUnits?: Array<string>;
     }
 
     export interface Effect {
@@ -128,8 +128,8 @@ declare namespace SC2APIProtocol {
     export interface ActionRawUnitCommand {
         abilityId?: number;
         targetWorldSpacePos?: Point2D;
-        targetUnitTag?: (string | string);
-        unitTags?: Array<(string | string)>;
+        targetUnitTag?: string;
+        unitTags?: Array<string>;
         queueCommand?: boolean;
     }
 
