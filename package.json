@@ -1,6 +1,6 @@
 {
 	"name": "@node-sc2/proto",
-	"version": "0.5.4",
+	"version": "0.5.5",
 	"description": "Node.js transport client implementation of sc2client-proto definition - used for interfacing scripted and/or ML agents with Starcraft 2",
 	"main": "client.js",
 	"typings": "client.d.ts",
@@ -31,5 +31,9 @@
 		"promise-task-queue": "^1.2.0",
 		"protobufjs": "^6.8.8",
 		"ws": "^6.1.0"
+	},
+	"optionalDependencies": {
+		"bufferutil": "^4.0.0",
+		"utf-8-validate": "^5.0.1"
 	}
 }
