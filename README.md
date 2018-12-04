@@ -1,11 +1,11 @@
-![](https://img.shields.io/badge/version-0.5.3-brightgreen.svg)
+![](https://img.shields.io/badge/version-0.5.5-brightgreen.svg)
 
 # @node-sc2/proto
 This package allows you to easily create a client to interface with the Starcraft II API at the ground level, via its protobuf-defined interface - with Promises used to represent individual `Request -> Response` cycles.
 
-**NOTICE**: this package **only** provides an interface to the direct `Request -> Response` protocol. If you're wanting to build an agent (a bot) for SC2 using node.js, you probably want the `@node-sc2/api` package, which relies on this one and offers much higher levels of abstraction.
+**NOTICE**: this package **only** provides an interface to the direct `Request -> Response` protocol. If you're wanting to build an agent (a bot) for SC2 using node.js, you probably want the [`@node-sc2/core`](https://github.com/node-sc2/core/) package, which relies on this one and offers much higher levels of abstraction.
 
-The API for this library should not be considered stable until the `v1.0.0` release (which should correspond with the initial release of `@node-sc2/api`). Until then, please be aware that the API may change unexpectedly.
+The API for this library should not be considered stable until the `v1.0.0` release (which should correspond with the initial release of [`@node-sc2/core`](https://github.com/node-sc2/core/)). Until then, please be aware that the API may change unexpectedly.
 
 ## Design Principles
 Since frames sent over websockets have no unique identifier, and since the `s2client-proto` definition provides no such identifier, this client takes an alternative approach to allow for message queuing. Each request *type* has its own queue, consisting of a list of promise objects with a concurrency restriction of 1. This means that you are able to concurrently make 1 request of any *type*, but as many as 22 total concurrent requests (one for each unique type). The client also seemlessly queues transportation for you - allowing you make as many requests of the *same type* as you would like, and always receiving the correct associated response resolved from the promise. The goal of this design is to be able to rival the speed of systems-level clients - not by faster transport, but rather by taking advantage of event-driven i/o.
