@@ -1,6 +1,6 @@
 {
 	"name": "@node-sc2/proto",
-	"version": "0.5.5",
+	"version": "0.5.6",
 	"description": "Node.js transport client implementation of sc2client-proto definition - used for interfacing scripted and/or ML agents with Starcraft 2",
 	"main": "client.js",
 	"typings": "client.d.ts",
