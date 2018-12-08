@@ -149,7 +149,12 @@ function createProtoClient() {
 
 				const responseType = responseTypes.find(type => response[type]);
 
-				this._protoApiQueue[responseType](err, response);
+				const callbackHandler = this._protoApiQueue[responseType];
+				if (!callbackHandler) {
+					debug("WARNING: response received with no valid response type handler: ", response)
+				} else {
+					this._protoApiQueue[responseType](err, response);
+				}
 			});
 
 			this._ws.on('error', console.warn);
