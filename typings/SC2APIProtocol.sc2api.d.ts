@@ -383,9 +383,10 @@ declare namespace SC2APIProtocol {
 
     export interface InterfaceOptions {
         raw?: boolean;
-        score?: boolean;
+		score?: boolean;
+		rawCropToPlayableArea?: Boolean
         featureLayer?: SpatialCameraSetup;
-        render?: SpatialCameraSetup;
+		render?: SpatialCameraSetup;
     }
 
     export interface PlayerInfo {

@@ -132,6 +132,7 @@ function createProtoClient() {
 
 				/** @type {SC2APIProtocol.Response} */
 				const response = Response.toObject(responseMessage, {
+					bytes: Array,
 					longs: String, // default uint64's to strings
 					defaults: true, // populates empty arrays and objects instead of dropping
 				});
@@ -149,15 +150,24 @@ function createProtoClient() {
 
 				const responseType = responseTypes.find(type => response[type]);
 
+				if (responseType === 'leaveGame') {
+					debug('The client has responded to a leaveGame request');
+					this._ws.emit('leftGame');
+				}
+
 				const callbackHandler = this._protoApiQueue[responseType];
 				if (!callbackHandler) {
-					debug("WARNING: response received with no valid response type handler: ", response)
+					if (response.error[0] === 'No save available to load.') {
+						this._protoApiQueue['quickLoad'](err, response);
+					} else {
+						debug("WARNING: response received with no valid response type handler: ", response)
+					}
 				} else {
 					this._protoApiQueue[responseType](err, response);
 				}
 			});
 
-			this._ws.on('error', console.warn);
+			// this._ws.on('error', console.warn);
 			this._ws.on('close', () => debug('CONNECTION CLOSED'));
 
 			await promiseFromEvent(this._ws, 'open');
@@ -165,6 +175,9 @@ function createProtoClient() {
 			debug(`successfully connected to sc2 client on port ${opts.port}`);
 
 			return this.ping();
+		},
+		close() {
+			this._ws.close();
 		},
 		status,
 		_request(requestBuffer) {

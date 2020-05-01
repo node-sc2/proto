@@ -15,7 +15,7 @@ declare namespace SC2APIProtocol {
 
     export interface RequestQueryPathing {
         startPos?: Point2D;
-        unitTag?: number;
+        unitTag?: string;
         endPos?: Point2D;
     }
 
@@ -24,12 +24,12 @@ declare namespace SC2APIProtocol {
     }
 
     export interface RequestQueryAvailableAbilities {
-        unitTag?: number;
+        unitTag?: string;
     }
 
     export interface ResponseQueryAvailableAbilities {
         abilities?: Array<AvailableAbility>;
-        unitTag?: number;
+        unitTag?: string;
         unitTypeId?: number;
     }
 
