@@ -1,39 +1,52 @@
 {
-	"name": "@node-sc2/proto",
-	"version": "0.5.7",
-	"description": "Node.js transport client implementation of sc2client-proto definition - used for interfacing scripted and/or ML agents with Starcraft 2",
-	"main": "client.js",
-	"typings": "client.d.ts",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+ssh://git@github.com/node-sc2/proto.git"
-	},
-	"keywords": [
-		"s2client-proto",
-		"sc2",
-		"sc2-proto",
-		"node-sc2-proto"
-	],
-	"author": "Jared Kantrowitz <me@jkantr.com>",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/node-sc2/proto/issues"
-	},
-	"homepage": "https://github.com/node-sc2/proto#readme",
-	"dependencies": {
-		"@types/ws": "^6.0.1",
-		"create-event-emitter": "^1.0.0",
-		"debug": "^4.1.0",
-		"event-to-promise": "^0.8.0",
-		"promise-task-queue": "^1.2.0",
-		"protobufjs": "^6.8.8",
-		"ws": "^6.1.0"
-	},
-	"optionalDependencies": {
-		"bufferutil": "^4.0.0",
-		"utf-8-validate": "^5.0.1"
-	}
+  "_id": "@node-sc2/proto@0.5.7",
+  "_inBundle": false,
+  "_location": "/@node-sc2/core/@node-sc2/proto",
+  "_phantomChildren": {},
+  "_requiredBy": [
+    "/@node-sc2/system-protoss-supply/@node-sc2/core"
+  ],
+  "author": {
+    "name": "Jared Kantrowitz",
+    "email": "me@jkantr.com"
+  },
+  "bugs": {
+    "url": "https://github.com/node-sc2/proto/issues"
+  },
+  "dependencies": {
+    "@types/ws": "^6.0.1",
+    "bufferutil": "^4.0.0",
+    "create-event-emitter": "^1.0.0",
+    "debug": "^4.1.0",
+    "event-to-promise": "^0.8.0",
+    "promise-task-queue": "^1.2.0",
+    "protobufjs": "^6.8.8",
+    "utf-8-validate": "^5.0.1",
+    "ws": "^6.1.0"
+  },
+  "description": "Node.js transport client implementation of sc2client-proto definition - used for interfacing scripted and/or ML agents with Starcraft 2",
+  "gitHead": "564dfe52153803f867d120a874c5e03805769bea",
+  "homepage": "https://github.com/node-sc2/proto#readme",
+  "keywords": [
+    "s2client-proto",
+    "sc2",
+    "sc2-proto",
+    "node-sc2-proto"
+  ],
+  "license": "ISC",
+  "main": "client.js",
+  "name": "@node-sc2/proto",
+  "optionalDependencies": {
+    "bufferutil": "^4.0.0",
+    "utf-8-validate": "^5.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/node-sc2/proto.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "typings": "client.d.ts",
+  "version": "0.5.7"
 }
