@@ -27,8 +27,28 @@ declare namespace SC2APIProtocol {
         Observer = 3,
     }
     export enum Alert {
-        NuclearLaunchDetected = 1,
-        NydusWormDetected = 2,
+		NuclearLaunchDetected = 1,
+		NydusWormDetected = 2,
+        AlertError = 3,
+		AddOnComplete = 4,
+		BuildingComplete = 5,
+		BuildingUnderAttack = 6,
+		LarvaHatched = 7,
+		MergeComplete = 8,
+		MineralsExhausted = 9,
+		MorphComplete = 10,
+		MothershipComplete = 11,
+		MULEExpired = 12,
+		NukeComplete = 13,
+		ResearchComplete = 14,
+		TrainError = 15,
+		TrainUnitComplete = 16,
+		TrainWorkerComplete = 17,
+		TransformationComplete = 18,
+		UnitUnderAttack = 19,
+		UpgradeComplete = 20,
+		VespeneExhausted = 21,
+		WarpInComplete = 22,
     }
     export enum Result {
         Victory = 1,
@@ -367,18 +387,32 @@ declare namespace SC2APIProtocol {
     }
 
     export interface ResponseDebug {
-    }
+	}
+
+	export enum AIBuild {
+		RandomBuild = 1,
+		Rush = 2,
+		Timing = 3,
+		Power = 4,
+		Macro = 5,
+		Air = 6
+	}
 
     export interface PlayerSetup {
         type?: PlayerType;
         race?: Race;
-        difficulty?: Difficulty;
+		difficulty?: Difficulty;
+		playerName?: string;
+		aiBuild?: AIBuild;
     }
 
     export interface SpatialCameraSetup {
         width?: number;
         resolution?: Size2DI;
-        minimapResolution?: Size2DI;
+		minimapResolution?: Size2DI;
+		cropToPlayableArea?: boolean;
+		allowCheatingLayers?: boolean;
+		rawCropToPlayableArea?: boolean;
     }
 
     export interface InterfaceOptions {
@@ -387,6 +421,9 @@ declare namespace SC2APIProtocol {
 		rawCropToPlayableArea?: Boolean
         featureLayer?: SpatialCameraSetup;
 		render?: SpatialCameraSetup;
+		showCloaked?: boolean;
+		showBurrowedShadows?: boolean;
+		showPlaceholders?: boolean;
     }
 
     export interface PlayerInfo {
@@ -435,7 +472,8 @@ declare namespace SC2APIProtocol {
     export enum ActionChat_Channel {
         Broadcast = 1,
         Team = 2,
-    }
+	}
+
     export interface ActionChat {
         channel?: ActionChat_Channel;
         message?: string;

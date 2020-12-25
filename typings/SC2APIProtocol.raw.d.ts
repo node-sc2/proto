@@ -33,7 +33,8 @@ declare namespace SC2APIProtocol {
         units?: Array<Unit>;
         mapState?: MapState;
         event?: Event;
-        effects?: Array<Effect>;
+		effects?: Array<Effect>;
+		radar?: Array<RadarRing>;
     }
 
     export interface PowerSource {
@@ -102,7 +103,12 @@ declare namespace SC2APIProtocol {
         assignedHarvesters?: number;
         idealHarvesters?: number;
         weaponCooldown?: number;
-        engagedTargetTag?: string;
+		engagedTargetTag?: string;
+		attackUpgradeLevel?: number;
+		armorUpgradeLevel?: number;
+		shieldUpgradeLevel?: number;
+		buffDurationRemain?: number;
+		buffDurationMax?: number;
     }
 
     export interface MapState {
@@ -117,7 +123,12 @@ declare namespace SC2APIProtocol {
     export interface Effect {
         effectId?: number;
         pos?: Array<Point2D>;
-    }
+	}
+
+	export interface RadarRing {
+		pos?: Point;
+		radius?: number;
+	}
 
     export interface ActionRaw {
         unitCommand?: ActionRawUnitCommand;

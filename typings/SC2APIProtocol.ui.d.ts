@@ -26,7 +26,11 @@ declare namespace SC2APIProtocol {
     }
 
     export interface SinglePanel {
-        unit?: UnitInfo;
+		unit?: UnitInfo;
+		attackUpgradLevel?: number;
+		armorUpgradeLevel?: number;
+		shieldUpgradeLevel?: number;
+		buffs?: Array<number>;
     }
 
     export interface MultiPanel {
